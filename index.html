@@ -1,49 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>Aprova RO</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprova RO</title>
 <style>
+*{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:Arial,sans-serif;
-background:#0f172a;
+background:linear-gradient(135deg,#020617,#0f172a,#064e3b);
 color:white;
+min-height:100vh;
+}
+header{
+padding:25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.logo{font-size:26px;font-weight:900}
+.btn{
+background:#22c55e;
+color:#020617;
+padding:14px 22px;
+border-radius:14px;
+font-weight:900;
+text-decoration:none;
+display:inline-block;
+}
+.hero{
+padding:40px 25px;
 text-align:center;
-padding:40px;
+}
+.badge{
+display:inline-block;
+background:rgba(34,197,94,.15);
+color:#86efac;
+padding:8px 14px;
+border-radius:999px;
+font-weight:700;
+margin-bottom:20px;
+}
+h1{
+font-size:42px;
+line-height:1.1;
+margin-bottom:20px;
+}
+p{
+font-size:18px;
+color:#cbd5e1;
+line-height:1.5;
 }
 .card{
-background:#1e293b;
-padding:20px;
-border-radius:15px;
-max-width:600px;
-margin:auto;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+backdrop-filter:blur(14px);
+border-radius:28px;
+padding:25px;
+margin:25px;
+box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
-button{
-background:#22c55e;
+.search{
+display:grid;
+gap:12px;
+margin-top:20px;
+}
+select,input{
+width:100%;
+padding:16px;
 border:none;
-padding:15px 25px;
-border-radius:10px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
+border-radius:16px;
+font-size:16px;
+outline:none;
+}
+.grid{
+display:grid;
+gap:18px;
+padding:25px;
+}
+.item{
+background:#0f172a;
+border:1px solid rgba(255,255,255,.1);
+border-radius:22px;
+padding:20px;
+}
+.item h3{font-size:22px;margin-bottom:8px}
+.tag{
+display:inline-block;
+background:#22c55e;
+color:#020617;
+font-weight:900;
+padding:6px 10px;
+border-radius:999px;
+font-size:13px;
+margin-bottom:12px;
+}
+.premium{
+background:linear-gradient(135deg,#22c55e,#14b8a6);
+color:#020617;
+}
+.premium p{color:#064e3b}
+footer{
+text-align:center;
+padding:30px;
+color:#94a3b8;
+}
+@media(min-width:800px){
+h1{font-size:64px}
+.hero{max-width:900px;margin:auto}
+.search{grid-template-columns:1fr 1fr 1fr auto}
+.grid{grid-template-columns:repeat(3,1fr);max-width:1100px;margin:auto}
 }
 </style>
 </head>
 <body>
 
+<header>
+<div class="logo">🚀 Aprova RO</div>
+<a class="btn" href="#analise">Começar</a>
+</header>
+
+<section class="hero">
+<span class="badge">Concursos de Rondônia com Inteligência Artificial</span>
+<h1>Encontre o concurso com maior chance para você passar.</h1>
+<p>Busque por cidade, escolaridade e área. Depois receba uma análise inteligente com plano de estudo, matérias e estratégia.</p>
+</section>
+
 <div class="card">
-<h1>🚀 Aprova RO</h1>
-<h2>Concursos de Rondônia com IA</h2>
+<h2>🔎 Buscar concursos</h2>
+<div class="search">
+<select>
+<option>Cidade</option>
+<option>Vilhena</option>
+<option>Porto Velho</option>
+<option>Ji-Paraná</option>
+<option>Cacoal</option>
+<option>Ariquemes</option>
+</select>
 
-<p>Descubra qual concurso combina com você.</p>
+<select>
+<option>Escolaridade</option>
+<option>Fundamental</option>
+<option>Médio</option>
+<option>Técnico</option>
+<option>Superior</option>
+</select>
 
-<button>Fazer Análise Gratuita</button>
+<select>
+<option>Área</option>
+<option>Administrativo</option>
+<option>Educação</option>
+<option>Saúde</option>
+<option>Segurança</option>
+<option>Tribunal</option>
+</select>
 
-<p style="margin-top:20px;">
-Vilhena • Porto Velho • Ji-Paraná • Cacoal
-</p>
+<a class="btn" href="#concursos">Buscar</a>
 </div>
+</div>
+
+<section id="concursos" class="grid">
+<div class="item">
+<span class="tag">Previsto</span>
+<h3>Prefeitura de Vilhena</h3>
+<p>Área administrativa • Ensino médio • Boa opção para começar.</p>
+<br>
+<a class="btn" href="#analise">Analisar chance</a>
+</div>
+
+<div class="item">
+<span class="tag">Aberto</span>
+<h3>SEDUC RO</h3>
+<p>Educação • Ensino médio/técnico • Plano de estudo recomendado.</p>
+<br>
+<a class="btn" href="#analise">Analisar chance</a>
+</div>
+
+<div class="item">
+<span class="tag">Alta procura</span>
+<h3>TJRO</h3>
+<p>Tribunal • Salário maior • Exige preparação mais forte.</p>
+<br>
+<a class="btn" href="#analise">Analisar chance</a>
+</div>
+</section>
+
+<div id="analise" class="card premium">
+<h2>🤖 Qual concurso combina comigo?</h2>
+<p>Responda algumas perguntas e descubra quais concursos têm maior possibilidade para seu perfil.</p>
+<br>
+<input placeholder="Seu WhatsApp para receber a análise">
+<br><br>
+<a class="btn" style="background:#020617;color:white" href="#">Receber análise gratuita</a>
+</div>
+
+<div class="card">
+<h2>💰 Futuro plano premium</h2>
+<p>Plano de estudos automático, simulados, resumos de edital, questões comentadas e cronograma diário.</p>
+<br>
+<h2>R$ 19,90</h2>
+<p>por plano de concurso</p>
+</div>
+
+<footer>
+Aprova RO — Plataforma independente de apoio a candidatos.
+</footer>
 
 </body>
 </html>
